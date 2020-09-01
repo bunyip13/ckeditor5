@@ -7,7 +7,7 @@ category: features
 
 The {@link module:link/link~Link} feature brings support for link editing to the rich-text editor. It allows for inserting hyperlinks into the edited content and offers the UI to create and edit them.
 
-After you enable the optional [autolink](#autolink-feature) plugin, typed or pasted URL and e-mail addresses will be automatically turned into working links as you type.
+Builtin [autolink](#autolink-feature) feature automatically turns typed or pasted URL and e-mail addresses into working links as you edit the content.
 
 ## Demo
 
@@ -242,7 +242,7 @@ ClassicEditor
 
 ## Autolink feature
 
-You can enable automatic linking of URLs typed or pasted into the editor. The {@link module:link/autolink~AutoLink `AutoLink`} feature will automatically turn URLs or e-mail addresses into real, working links.
+The {@link module:link/autolink~AutoLink `AutoLink`} feature will automatically turn URLs or e-mail addresses into real, working links.
 
 To use the autolink function simply press <kbd>Space</kbd>, <kbd>Enter</kbd> or <kbd>Shift</kbd>+<kbd>Enter</kbd> after a link.
 
@@ -251,8 +251,6 @@ To use the autolink function simply press <kbd>Space</kbd>, <kbd>Enter</kbd> or 
 </info-box>
 
 {@snippet features/autolink}
-
-Unlike the base link feature, the autolink plugin is not available in any of the builds. Refer to the [Installation](#installation) section to learn how to enable it.
 
 ## Installation
 
@@ -268,15 +266,14 @@ To add this feature to your editor, install the [`@ckeditor/ckeditor5-link`](htt
 npm install --save @ckeditor/ckeditor5-link
 ```
 
-Then add the `Link` and `AutoLink` plugins to your plugin list:
+Then add the `Link` plugin to your plugin list:
 
 ```js
 import Link from '@ckeditor/ckeditor5-link/src/link';
-import AutoLink from '@ckeditor/ckeditor5-link/src/autolink';
 
 ClassicEditor
 	.create( document.querySelector( '#editor' ), {
-		plugins: [ Link, AutoLink, ... ],
+		plugins: [ Link, ... ],
 		toolbar: [ 'link', ... ],
 	} )
 	.then( ... )
